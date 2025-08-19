@@ -48,6 +48,16 @@ const Home = () => {
     onOpen();
   };
 
+  // Enter chat: if logged in go to dashboard, else open login tab
+  const handleEnterChat = () => {
+    if (isAuthenticated) {
+      navigator("/dashboard");
+    } else {
+      setindex(0);
+      onOpen();
+    }
+  };
+
   const accent = useColorModeValue("brand.500", "brand.400");
   const sub = useColorModeValue("gray.600", "gray.300");
 
@@ -62,8 +72,21 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Text fontSize={{ base: "5xl", md: "7xl" }} fontWeight="extrabold" lineHeight="1.1"
-                bgGradient="linear(to-r, brand.400, cyan.300)" bgClip="text">
+              <Text
+                fontSize={{ base: "5xl", md: "7xl" }}
+                fontWeight="extrabold"
+                lineHeight="1.1"
+                bgGradient="linear(to-r, brand.400, cyan.300)"
+                bgClip="text"
+                cursor="pointer"
+                role="button"
+                tabIndex={0}
+                onClick={handleEnterChat}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") handleEnterChat();
+                }}
+                title={isAuthenticated ? "Open chat" : "Login to start chatting"}
+              >
                 Allify
               </Text>
             </Box>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Tabs, TabPanel, TabPanels, TabList, Tab } from "@chakra-ui/react";
 import MyChatList from "./MyChatList";
 import NewChats from "./NewChats";
@@ -10,6 +10,12 @@ import MyNetwork from "./MyNetwork";
 
 const Chats = () => {
   const [activeTab, setactiveTab] = useState(0);
+
+  useEffect(() => {
+    const handler = () => setactiveTab(0);
+    window.addEventListener("allify-open-chat", handler);
+    return () => window.removeEventListener("allify-open-chat", handler);
+  }, []);
 
   return (
     <>

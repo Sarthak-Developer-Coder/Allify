@@ -145,7 +145,32 @@ const Navbar = (props) => {
       >
         <Flex justify={"space-between"} align="center">
           <motion.div initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-            <Text fontSize="2xl" fontWeight="extrabold" bgGradient="linear(to-r, brand.400, cyan.300)" bgClip="text">
+            <Text
+              fontSize="2xl"
+              fontWeight="extrabold"
+              bgGradient="linear(to-r, brand.400, cyan.300)"
+              bgClip="text"
+              role="button"
+              tabIndex={0}
+              cursor="pointer"
+              onClick={() => {
+                try { window.dispatchEvent(new CustomEvent("allify-open-chat")); } catch {}
+                // focus search if exists
+                setTimeout(() => {
+                  const el = document.getElementById("search-input");
+                  if (el) try { el.focus(); } catch {}
+                }, 0);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  try { window.dispatchEvent(new CustomEvent("allify-open-chat")); } catch {}
+                  setTimeout(() => {
+                    const el = document.getElementById("search-input");
+                    if (el) try { el.focus(); } catch {}
+                  }, 0);
+                }
+              }}
+            >
               Allify
             </Text>
           </motion.div>
@@ -210,6 +235,24 @@ const Navbar = (props) => {
             {isAuthenticated && (
               <ProfileMenu isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
             )}
+            <MotionButton
+              size="sm"
+              ml={2}
+              onClick={() => {
+                const here = window.location.pathname;
+                if (here !== '/dashboard') {
+                  window.location.href = '/dashboard';
+                } else {
+                  try { window.dispatchEvent(new CustomEvent('allify-open-chat')); } catch {}
+                  setTimeout(() => {
+                    const el = document.getElementById('search-input');
+                    if (el) try { el.focus(); } catch {}
+                  }, 0);
+                }
+              }}
+            >
+              Chat
+            </MotionButton>
             {isAuthenticated && (
               <MotionButton size="sm" ml={2} onClick={() => { window.location.href = '/portfolio'; }}>Portfolio</MotionButton>
             )}

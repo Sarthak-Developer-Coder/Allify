@@ -530,12 +530,38 @@ export const ChatArea = () => {
             <Box position="absolute" inset={0} w="100vw" h="60vh" left="50%" transform="translateX(-50%)" zIndex={0}>
               <SparklesCore id="tsparticles-chat-empty" background="transparent" particleDensity={90} minSize={0.6} maxSize={1.2} className="w-full h-full" particleColor="#ffffff" />
             </Box>
-            <Box position="relative" zIndex={1}>
+            <Box position="relative" zIndex={1}
+              role="button"
+              tabIndex={0}
+              onClick={() => {
+                // Focus the search input in the Chats panel if present
+                const el = document.getElementById("search-input");
+                if (el) {
+                  try {
+                    el.focus();
+                    el.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+                  } catch {}
+                }
+                // Ask the left panel to ensure Chats tab is visible
+                try { window.dispatchEvent(new CustomEvent("allify-open-chat")); } catch {}
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  const el = document.getElementById("search-input");
+                  if (el) {
+                    try { el.focus(); } catch {}
+                  }
+                  try { window.dispatchEvent(new CustomEvent("allify-open-chat")); } catch {}
+                }
+              }}
+              cursor="pointer"
+            >
               <Text fontSize="6vw" fontWeight="bold" fontFamily="Work sans">
                 Allify
               </Text>
               <Text fontSize="2vw">Where chatting, fun, and friends come alive</Text>
-              <Text fontSize="md">Select a chat to start messaging</Text>
+              <Text fontSize="md">Click to start chatting</Text>
             </Box>
           </Box>
         )
