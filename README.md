@@ -7,9 +7,7 @@
 	<em>Where chatting, fun, and friends come alive</em>
 	<p>A full-stack MERN (MongoDB, Express.js, React.js, Node.js, Socket.IO) online chatting application 💬 with friends additionally with a Personal Chatbot. 🤖</p>
   </div>
-  <div>
-	<img src="https://raw.githubusercontent.com/pankil-soni/mern-chat-app/refs/heads/main/screenshots/banner.png" width="30%" alt="Allify Banner">
-  </div>
+  
 </div>
 	
 ### Allify is a chat-app with various features like:
@@ -67,9 +65,7 @@ password: 1234guest
 			A full‑stack MERN (MongoDB, Express, React, Node) realtime chat with Socket.IO, media uploads, AI assistant, and a delightful UI/UX (Chakra UI + Framer Motion).
 		</p>
 	</div>
-	<div>
-		<img src="screenshots/banner.png" width="30%" alt="Allify Banner" />
-	</div>
+	
 </div>
 
 <p align="left">
@@ -101,58 +97,7 @@ password: 1234guest
 Allify is a Snapchat‑inspired, production‑ready chat experience. Beyond DMs and groups, it layers Stories, Snaps, Streaks, Reactions, Memories, Spotlight/Discover, Map, Notifications, Admin tools, and a Personal AI Assistant. The frontend is React 18 + Chakra UI + Framer Motion with tasteful effects (Lamp glow on Home, animated Butterflies behind routes). The backend is Node/Express + MongoDB with Socket.IO, Cloudinary/AWS S3, web-push, and optional Google Generative AI.
 
 
-## 📸 Screenshots
 
-<table>
-	<tr>
-		<td><img src="screenshots/1_home.png" width="420" alt="Home with Lamp effect"/></td>
-		<td><img src="screenshots/2_login_signup.png" width="420" alt="Login & Signup"/></td>
-	</tr>
-	<tr>
-		<td align="center">Home — Lamp spotlight + animated butterflies</td>
-		<td align="center">Auth — Email/password, OTP flow</td>
-	</tr>
-	<tr>
-		<td><img src="screenshots/3_dashboard.png" width="420" alt="Dashboard"/></td>
-		<td><img src="screenshots/4_newchat.png" width="420" alt="Start a new chat"/></td>
-	</tr>
-	<tr>
-		<td align="center">Dashboard — Responsive, themed</td>
-		<td align="center">New Chat — Global search and start</td>
-	</tr>
-	<tr>
-		<td><img src="screenshots/5_searching.png" width="420" alt="Searching"/></td>
-		<td><img src="screenshots/6_chatting_area.png" width="420" alt="Chatting area"/></td>
-	</tr>
-	<tr>
-		<td align="center">People/Chats Search</td>
-		<td align="center">Chat — Typing, read receipts, images</td>
-	</tr>
-	<tr>
-		<td><img src="screenshots/new_message.png" width="420" alt="New message toast"/></td>
-		<td><img src="screenshots/typing_animation.png" width="420" alt="Typing animation"/></td>
-	</tr>
-	<tr>
-		<td align="center">Realtime new message notification</td>
-		<td align="center">Typing indicator</td>
-	</tr>
-	<tr>
-		<td><img src="screenshots/8_delete_message.png" width="420" alt="Delete message"/></td>
-		<td><img src="screenshots/7_send_photo.png" width="420" alt="Send photo"/></td>
-	</tr>
-	<tr>
-		<td align="center">Message delete (for me / everyone)</td>
-		<td align="center">Send images with captions</td>
-	</tr>
-	<tr>
-		<td><img src="screenshots/personal_chatbot.png" width="420" alt="Personal assistant"/></td>
-		<td><img src="screenshots/9_login_otp.png" width="420" alt="Login with OTP"/></td>
-	</tr>
-	<tr>
-		<td align="center">Personal AI Assistant</td>
-		<td align="center">OTP login</td>
-	</tr>
-</table>
 
 
 ## 👾 Features
