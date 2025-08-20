@@ -3,13 +3,27 @@ import { useLocation, Outlet } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import App from "../../App";
 import ButterflyField from "../ui/ButterflyField";
+import CritterFlight from "../ui/CritterFlight";
+import LeafFall from "../ui/LeafFall";
+import HeartFloaters from "../ui/HeartFloaters";
+import RainOverlay from "../ui/RainOverlay";
+import ThunderOverlay from "../ui/ThunderOverlay";
+import RoseFloaters from "../ui/RoseFloaters";
+import SunflowerFloaters from "../ui/SunflowerFloaters";
 
 export default function AnimatedLayout({ token }) {
   const location = useLocation();
   return (
     <>
-      {/* Background butterflies */}
-      <ButterflyField count={20} />
+  {/* Background butterflies and dragon */}
+  <ButterflyField count={20} />
+  <CritterFlight count={8} />
+  <LeafFall count={20} />
+  <HeartFloaters count={14} />
+  <RoseFloaters count={10} />
+  <SunflowerFloaters count={8} />
+  <RainOverlay count={80} speed={1} />
+  <ThunderOverlay flashEverySec={[3,7]} boltCount={6} flashStrength={0.55} />
       <App token={token} />
       <AnimatePresence mode="wait">
         <motion.div
